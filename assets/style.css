@@ -1,0 +1,11 @@
+.hero-body.is-changed {
+
+	color:#fff;
+	color:rgba(255,255,255,0.75);
+	background: #FC466B;
+	background: -webkit-linear-gradient(to right, #b33ffb, #FC466B);
+	background: linear-gradient(-135deg, #ee7752, #FC466B, #b33ffb, #23d5ab);
+	background-size: 400% 400%;
+	
+}
+
