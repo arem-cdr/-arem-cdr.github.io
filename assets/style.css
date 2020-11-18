@@ -1,11 +1,22 @@
 .hero-body.is-changed {
 
-	color:#fff;
-	color:rgba(255,255,255,0.75);
-	background: #FC466B;
-	background: -webkit-linear-gradient(to right, #b33ffb, #FC466B);
-	background: linear-gradient(-135deg, #ee7752, #FC466B, #b33ffb, #23d5ab);
-	background-size: 400% 400%;
 	
+	
+	background-image: repeating-linear-gradient(135deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(197, 1, 191),rgb(96, 73, 231));
+	}
+
+.rot1 {
+    position: relative;
+    height: 60px;
+	width: 60px;
+
+	margin-right: 30px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
 }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 
