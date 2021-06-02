@@ -5,12 +5,24 @@
 	background-image: repeating-linear-gradient(135deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(135deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),repeating-linear-gradient(90deg, hsla(307,70%,63%,0.05) 0px, hsla(307,70%,63%,0.05) 1px,transparent 1px, transparent 11px,hsla(307,70%,63%,0.05) 11px, hsla(307,70%,63%,0.05) 12px,transparent 12px, transparent 32px),linear-gradient(90deg, rgb(197, 1, 191),rgb(96, 73, 231));
 	}
 
-.rot1 {
-    position: relative;
-    
-}
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 
+.bg-img { 
+	 background-image: url("sbgdeuxrobots.png") ;
+	 background-position: center center;
+	 background-repeat:  no-repeat;
+	 background-attachment: fixed;
+	 background-size:  cover;
+	 background-color: #999;
+	 text-align: center;
+	 opacity: 1
+}
+
+.img-responsive {
+	display: block; 
+	max-width: 100%;
+	height: auto;
+ } 
