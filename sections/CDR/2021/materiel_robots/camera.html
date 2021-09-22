@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+<!--IMPORTANT! Modifier les chemins d'accès au CSS, JS et aux photos en fonction du dossier-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>AREM</title>
+        <link rel="icon" type="image/png" href="../../../../assets/commun/icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../../../css/uikit.css">
+        <script src="../../../../js/uikit.js"></script>
+        <script src="../../../../js/uikit-icons.js"></script>        
+    </head>
+    <body>
+        <section style="background: url('../../../../assets/commun/fond.png'); ">
+            <div class="uk-container">
+                <img src="../../../../assets/commun/icon.png" style="height:150px;float:left;">
+                <p style="font-family:Optimus; font-size: 1.5em; color:aliceblue; float:center;"><br>Association de Robotique et d'Électronique des Mines</p>
+            </div>
+        </section>
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div class="uk-navbar" uk-navbar="">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li >
+                                <a href="../../../../index.html">Accueil</a>
+                            </li>
+                            <li class="uk-active">
+                                <a href="#" aria-expanded="false">Coupe de Robotique</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 67.7333px; top: 80px;">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-Parent">
+                                            <a href="../../../../sections/CDR/2021/CDR-2021-menu.html">Session 2021</a>
+                                            <a href="../../../../index.html">Session 2020</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../../../../index.html">Fusée</a>
+                            </li>
+                            <li>
+                                <a href="../../../qui-sommes-nous.html">Qui sommes-nous ?</a>
+                            </li>
+                            <li>
+                                <a href="../../../contact.html">Contact</a>
+                            </li>                
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a class="uk-navbar-toggle uk-icon" href="https://github.com/arem-cdr">
+                            <img src="../../../../assets/commun/logo_GitHub.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://fr-fr.facebook.com/AREM.ismin/">
+                            <img src="../../../../assets/commun/logo_Facebook.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://www.instagram.com/arem_ismin/">
+                            <img src="../../../../assets/commun/logo_insta.png" width="40" height="40">
+                        </a>                        
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="uk-section uk-section-default">
+            <div class="uk-container">
+            <!--Partie à modifier en fonction de la page web-->
+                <h1 class="uk-article-title">Caméra</h1>
+                <hr class="uk-margin-medium">
+                <div class="uk-grid">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p class="uk-text-lead">
+                            Chaque robot a été équipé d’une caméra.<br> La caméra placée sur Kraken avait pour premier objectif de déterminer la couleur des gobelets saisis afin de les déposer aux bons endroits et comme second but de déterminer l’orientation de la girouette Nord/Sud.<br> Celle sur Léviathan avait pour objectif de détecter les gobelets sur le terrain afin d’optimiser les trajectoires vers les gobelets.                       
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m">
+                        <img src="../../../../assets/CDR/2021/Nos Robots/camera/camera_kraken.jpg" style="height: 200px;">
+                    </div>
+                </div> 
+                <hr class="uk-margin-medium">
+                <h4>Fonctionnement :</h4>
+                <p>La caméra choisie est spécialement conçue pour se brancher sur une carte Raspberry. Le traitement d’image s’effectue ensuite via un programme écrit en python en utilisant la bibliothèque Open cv.<br></p>
+                <h4>Choix du composant :</h4>
+                <p>Pour la CDR 2021, nous avons réutilisé les caméras de l’année dernière. La première, placée sur Kraken, est une caméra grand angle qui a le désavantage de déformer les images mais l’avantage de voir une très large partie du terrain. La seconde est une caméra qui peut voir en infra-rouge. Elle a l’avantage de voir la nuit, mais en environnement éclairé elle a le désavantage de ne pas représenter fidèlement les couleurs : elles tendent vers le rouge. Cependant on peut corriger ce problème dans le programme python.</p>
+                <h4>Intégration du composant :</h4>
+                <p>
+                Une Raspberry Pi fonctionnement sous Raspberry Pi OS (nouveau nom de l’OS Raspbian) a été utilisée. Afin de faire fonctionner la caméra, il faut activer le paramètre relatif à l’utilisation de la caméra dans les réglages. Ensuite, il faudra installer Python et Open cv. <br>
+                Pour cela, je conseille de suivre le tutoriel d’installation : <br><a href=https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/>https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/</a>
+                <br><br>Il est conseillé de faire une installation avec pip. De plus, il n’est pas pertinent d’utiliser un environnement virtuel dans le Raspberry pour notre utilisation, donc inutile de faire le workon cv.<br>
+                <br>Ensuite, pour découvrir quelques tutoriels, vous pouvez directement aller sur le site web :<br>
+                <a href=https://apprendreopencv.go.yo.fr>https://apprendreopencv.go.yo.fr</a>.<br><br> Même si ces tutos sont sur Ubuntu, les codes sont exactement les mêmes sur la Raspberry.<br><br>
+                </p>  
+                <div class="uk-grid">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p>
+                            Pour la programmation de la caméra de Kraken, la détection des couleurs s’est faite en effectuant une moyenne des couleurs à chaque emplacement des gobelets. La composante RGB majoritaire de cette moyenne était sélectionnée. Quelques réglages empiriques ont ensuite été faits afin de s’adapter à la luminosité environnante. La détection de la position de la girouette n’a pas été réalisé, cependant, une lecture de code haricot est très facile à réaliser avec Open cv et pourra donc être fait lors des prochaines coupes.<br>
+                            <br>Pour la programmation de la caméra de Léviathan, la détection des gobelets s’effectue avec du machine learning en utilisant la méthode Haar cascade. Une prise de photos des gobelets a été nécessaire afin d’entraîner le modèle. Open CV gère très bien le Haar cascade.<br><br> Un tutoriel pour utiliser la méthode haarcascade est disponible sur <a href=https://apprendreopencv.go.yo.fr>https://apprendreopencv.go.yo.fr</a>.<br><br> Un tutoriel sur la création de fichiers haar est prévu mais des ressources sur internet sont déjà disponibles. Cependant, la méthode Haar est relativement ancienne et ses limites sont rapidement atteintes. Il serait conseillé de se pencher sur Tensorflow et PyTorch par la suite.
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m uk-text-center\@m">
+                        <img src="../../../../assets/CDR/2021/Nos Robots/camera/couleurs.jpg" style="height: 200px;">
+                        <p>
+                            <i>Le programme reconnait les couleurs !</i>
+                        </p>
+                        <img src="../../../../assets/CDR/2021/Nos Robots/camera/gobelets_couloir_mini.jpg" style="height: 200px;">
+                        <p>
+                            <i>Les gobelets sont bien reconnus.</i>
+                        </p>
+                    </div>
+                </div>              
+                <hr class="uk-margin-medium">
+                <h3>Conclusion</h3>
+                <h4>Travail accompli :</h4>
+
+                <p>La partie de détection de couleurs sur Kraken est très efficace mais malheureusement lors du passage à la coupe, Kraken n’a pu saisir aucun gobelet, donc la caméra n’a pas pu être utilisée.<br><br>
+                    La partie de détection des gobelets avec Léviathan est efficace dans certains environnements mais n’est pas suffisamment fiable pour se passer de capteurs (TOF, ultrasons etc).</p>
+
+                <h4>Améliorations :</h4>
+                <p>Il faut se pencher davantage sur les modèles de détection avec de l’intelligence artificielle sur Tensorflow, PyTorch, Yolo par exemple. Je pense qu’une grande maîtrise de la vision par ordinateur est la clé de la réussite pour les prochaines coupes de robotique. Il est important que les connaissances en vision par ordinateur se transmettent années après années afin de pouvoir atteindre un haut niveau en traitement d’image et rendre les robots extrêmement performants.</p>
+            </div>
+        </div>
+    </body>
+</html>

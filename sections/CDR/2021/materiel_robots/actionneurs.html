@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html><head>
+<!--IMPORTANT! Modifier les chemins d'accès au CSS, JS et aux photos en fonction du dossier-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>AREM</title>
+        <link rel="icon" type="image/png" href="../../../../assets/commun/icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../../../css/uikit.css">
+        <script src="../../../../js/uikit.js"></script>
+        <script src="../../../../js/uikit-icons.js"></script>        
+    </head>
+    <body>
+        <section style="background: url('../../../../assets/commun/fond.png'); ">
+            <div class="uk-container">
+                <img src="../../../../assets/commun/icon.png" style="height:150px;float:left;">
+                <p style="font-family:Optimus; font-size: 1.5em; color:aliceblue; float:center;"><br>Association de Robotique et d'Électronique des Mines</p>
+            </div>
+        </section>
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div class="uk-navbar" uk-navbar="">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li >
+                                <a href="../../../../index.html">Accueil</a>
+                            </li>
+                            <li class="uk-active">
+                                <a href="#" aria-expanded="false">Coupe de Robotique</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 67.7333px; top: 80px;">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-Parent">
+                                            <a href="../../../../sections/CDR/2021/CDR-2021-menu.html">Session 2021</a>
+                                            <a href="../../../../index.html">Session 2020</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../../../../index.html">Fusée</a>
+                            </li>
+                            <li>
+                                <a href="../../../qui-sommes-nous.html">Qui sommes-nous ?</a>
+                            </li>
+                            <li>
+                                <a href="../../../contact.html">Contact</a>
+                            </li>                
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a class="uk-navbar-toggle uk-icon" href="https://github.com/arem-cdr">
+                            <img src="../../../../assets/commun/logo_GitHub.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://fr-fr.facebook.com/AREM.ismin/">
+                            <img src="../../../../assets/commun/logo_Facebook.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://www.instagram.com/arem_ismin/">
+                            <img src="../../../../assets/commun/logo_insta.png" width="40" height="40">
+                        </a>                        
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="uk-section uk-section-default">
+            <div class="uk-container">
+            <!--Partie à modifier en fonction de la page web-->
+                <article class="uk-article">
+                    <h1 class="uk-article-title">Pompes & Ventouses</h1>
+                    <hr class="uk-margin-medium">
+                    <div class="uk-grid">
+                        <div class="uk-width-2-3@m uk-first-column">
+                            <p class="uk-text-lead">
+                                Les actionneurs de Kraken ont pour but de récupérer des gobelets situés dans des écueils. Après les gobelets collés aux ventouses par aspiration d’air avec des pompes, ils sont soulevés par l’intermédiaire du servomoteur. Les 5 pompes pour chaque ventouse s’allument ensemble, mais les électrovannes reliées individuellement à chaque ventouse peuvent s’utiliser individuellement et permettent de relâcher les gobelets. Ces actionneurs sont pilotés par l’intermédiaire d’une carte Arduino nano en liaison série avec le microcontrôleur principale.  
+                            </p>                             
+                        </div>
+                        <div class="uk-width-expand@m">
+                            <img src="../../../../assets/CDR/2021/Nos Robots/Actionneurs/Actionneurs.jpg" style="height: 200px;">
+                        </div>
+                    </div>
+                    <hr class="uk-margin-medium">
+                    <div class="uk-grid">
+                        <div class="uk-width-expand@m uk-first-column uk-text-center@m">
+                            <img src="../../../../assets/CDR/2021/Nos Robots/Actionneurs/schema_elec_actio.jpg" style="height: 300px;">
+                        </div>
+                        <div class="uk-width-2-3@m">
+                            <p>Chaque pompe est hermétiquement reliée à une ventouse et une électrovanne. Les électrovannes ouvrent le circuit d’air quand elles sont alimentées, ce qui stoppe la succion des ventouses.
+                                La carte Arduino nano pilote ou non les actionneurs sur ordre (liaison série) du microcontrôleur principal. <br><br>
+                            Le fait de passer par la carte Arduino nano et de na pas piloter les actionneurs directement depuis le microcontrôleur principal permet :
+                            <br>-	De ne pas surcharger de fils le microcontrôleur principal
+                            <br>-	D’avoir suffisamment de pin libre sur le microcontrôleur principal
+                            <br>
+                                L’ensemble des pompes sont reliés en parallèle et un unique transistor permet de les alimenter ou non. Ce transistor est piloté par la carte Arduino nano.
+                                Il y a un transistor par électrovanne permettant de les alimenter ou non de manière individuelle. Ces transistors sont pilotés par la carte Arduino nano.
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+                        <br>
+                        L’alimentation de l’ensemble de la carte actionneurs (ou vient s’interfacer les alimentations des pompes, des électrovannes, et du servomoteur) est stabilisé par un condensateur de haute capacité ( en parallèle ). <br>
+                        <br>
+                        En effet, des pics de courant important ont été détectés lors de l’utilisation de la carte (commutation des électrovannes notamment) qui nuisaient fortement au fonctionnement des actionneurs ( mise hors tension de la carte arduino, électrovannes et pompes mal alimentés). L’ajout d’un condensateur permet de régler ces problèmes.
+Les ventouses ont été choisis après un test de plusieurs échantillons envoyés par la société SAPELEM (ventouses d’ailleurs offertes au final, merci). Elles permettaient la meilleure saisie des gobelets, par contact ventouse gobelet, sans élan.
+Les tuyaux ont été choisis pour leur souplesse.<br><br>
+Les différents morceaux de tuyaux pour un même couple électrovanne/pompe/ventouse sont reliés par un « T ». Des morceaux de Tuyaux plus rigides assure le lien entre les tuyaux souples et le T.
+La carte actionneur a été conçu sur KiCad et commandé sur JLPPCB
+Des Profilés en aluminium et pièce imprimés en 3D ont été utilisé pour fixer les actionneurs.
+Les alimentations des pompes et électrovannes sont interfacés sur la carte actionneur avec des câbles serties. Ils se sont montrés indispensable pour limiter les faux contacts. Il faut aussi préférer l’utilisation de câbles pré-serties au sertissage manuel.
+
+                    </p>
+                    <hr class="uk-margin-medium">
+                    <h4>Code:</h4> 
+                    <pre>
+                        <code>
+    #include "HardwareSerial.h"
+    HardwareSerial *ser_act;
+
+    ser_act = new HardwareSerial(PD_2 PC_12);
+    ser_act->begin(9600);
+                        </code>
+                    </pre>
+                    <h4>Envoi des données:</h4>
+                    <code>
+                        ser_act-> print("3");
+                    </code>
+                    <p>
+                        Il faut établir une table de correspondance caractère envoyé/opérations à effectuer 
+                    </p>
+                    <h4>Réception côté Arduino nano:</h4>
+                    <pre>
+                        <code>
+    Serial.begin(9600);
+    void loop() 
+    {
+        if(Serial.available())
+        {
+            char c = Serial.read();
+            /*Réaliser Action selon le caractère reçu */<br>
+        }
+    }
+                        </code>
+                    </pre>
+                </article>
+            </div>
+        </div>
+    </body>
+</html>
