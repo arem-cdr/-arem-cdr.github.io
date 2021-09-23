@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><head>
+<!--IMPORTANT! Modifier les chemins d'accès au CSS, JS et aux photos en fonction du dossier-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>AREM</title>
+        <link rel="icon" type="image/png" href="../../../../assets/commun/icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../../../css/uikit.css">
+        <script src="../../../../js/uikit.js"></script>
+        <script src="../../../../js/uikit-icons.js"></script>        
+    </head>
+    <body>
+        <section style="background: url('../../../../assets/commun/fond.png'); ">
+            <div class="uk-container">
+                <img src="../../../../assets/commun/icon.png" style="height:150px;float:left;">
+                <p style="font-family:Optimus; font-size: 1.5em; color:aliceblue; float:center;"><br>Association de Robotique et d'Électronique des Mines</p>
+            </div>
+        </section>
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div class="uk-navbar" uk-navbar="">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li >
+                                <a href="../../../../index.html">Accueil</a>
+                            </li>
+                            <li class="uk-active">
+                                <a href="#" aria-expanded="false">Coupe de Robotique</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 67.7333px; top: 80px;">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-Parent">
+                                            <a href="../../../../sections/CDR/2021/CDR-2021-menu.html">Session 2021</a>
+                                            <a href="../../../../index.html">Session 2020</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../../../../index.html">Fusée</a>
+                            </li>
+                            <li>
+                                <a href="../../../qui-sommes-nous.html">Qui sommes-nous ?</a>
+                            </li>
+                            <li>
+                                <a href="../../../contact.html">Contact</a>
+                            </li>                
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a class="uk-navbar-toggle uk-icon" href="https://github.com/arem-cdr">
+                            <img src="../../../../assets/commun/logo_GitHub.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://fr-fr.facebook.com/AREM.ismin/">
+                            <img src="../../../../assets/commun/logo_Facebook.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://www.instagram.com/arem_ismin/">
+                            <img src="../../../../assets/commun/logo_insta.png" width="40" height="40">
+                        </a>                        
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="uk-section uk-section-default">
+            <div class="uk-container">
+            <!--Partie à modifier en fonction de la page web-->
+                <h1>Servomoteur</h1>
+                <hr class="uk-margin-medium">
+                <div class="uk-grid uk-flex uk-flex-middle">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p class="uk-text-lead">
+                            Les servomoteurs sont de petits moteurs capables de maintenir une opposition. Ils sont équipés d’un réducteur intégré, qui permet aux robots de déplacer un axe sur 180°.                         
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m">
+                        <img src="../../../../assets/CDR/2021/Nos Robots/servo/servo_titre.jpg" style="height: 250px;">
+                    </div>
+                </div>
+                <hr class="uk-margin-medium">
+                <h2>Composition interne d'un servomoteur:</h2>
+                <p>
+                    •	L’axe de rotation sur lequel est monté un accessoire en plastique ou en métal<br>
+                    •	Le boitier qui le protège<br>
+                    •	un moteur à courant continu<br>
+                    •	des engrenages pour former un réducteur (en plastique ou en métal)<br>
+                    •	un capteur de position de l’angle d’orientation de l’axe (un potentiomètre bien souvent)<br>
+                    •	une carte électronique pour le contrôle de la position de l’axe et le pilotage du moteur à courant continu.<br><br>
+                    Le servomoteur a besoin de trois fils de connexion pour fonctionner. Deux fils servent à son alimentation, le dernier étant celui qui reçoit le signal de commande :<br><br>
+                    •	rouge : pour l’alimentation positive (4.5V à 6V en général)<br>
+                    •	marron : pour la masse (0V)<br>
+                    •	jaune … : entrée du signal de commande.<br><br>
+                </p>
+                <hr class="uk-margin-medium">
+                <h2>Fonctionnement et commande</h2>
+                <div class="uk-grid uk-flex uk-flex-middle">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p>
+                            Le servo-moteur est composé de 3 pins, deux pour le courant et un pour le signal. Dans la plupart des servomoteurs, le signal envoyé correspond à une impulsion comprise entre 1 et 2ms toutes les 20 ms. La durée du signal correspond à un angle entre 0 et 180°. 
+                            Ainsi 1ms correspondra à un angle de 0°, 1,5ms à 90° et 2ms à 180°. On peut voir cette opération dans la définition de la librairie ‘servo’ d’Arduino.
+                            La position angulaire d’un servomoteur est vérifiée en continu et corrigée en fonction de la mesure. C’est un système asservi.<br><br>
+
+                            La consigne envoyée au servomoteur est un signal électronique de type PWM.
+                            La durée de l’état haut fixe la position du bras du servomoteur à un angle déterminé.<br>Pour un angle de 45°, le temps de l’état haut va être compris entre 1ms et 1,5ms.<br> Et dans le cas où le servo peut faire un tour complet (donc 360°), c’est aussi la même chose. <br>
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m uk-text-center">
+                        <br>
+                        <img src="../../../../assets/CDR/2021/Nos Robots/servo/pwm_servo.jpg" style="height: 200px;">
+                        <p>
+                            <i>Position en fonction de la pulsation</i>
+                        </p>
+                    </div>
+                </div>
+                <hr class="uk-margin-medium">
+                <h2>Intégration et choix du composant</h2>
+                <div class="uk-grid uk-flex uk-flex-middle">
+                    <div class="uk-width-expand@m uk-text-center">
+                        <br>
+                        <img src="../../../../assets/CDR/2021/Nos Robots/servo/servomoteur.jpg" style="height: 200px;">
+                        <p>
+                            <i>Le servomoteur choisi</i>
+                        </p>
+                    </div>
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p>
+                            Ils servent pour les actionneurs des robots : sur Léviathan, il y a 5 servomoteurs au total, 4 pour les portes et 1 pour les drapeaux. Sur Kraken, il y a 2 servomoteurs : un pour lever la barre des ventouses et un pour la barre servant à relever les manches à air.<br><br>
+                            Les servomoteurs HS-422 Hitec ont été choisis car ils avaient été achetés l’année passée pour leur durabilité et leur fiabilité (fournissent un bon mouvement, que ce soit à des vitesses faibles ou élevées). Les servomoteurs utilisés pendant la CDR sont asservis en position angulaire.<br>
+                            Ainsi, l’axe de sortie du servomoteur respectera une consigne d’orientation qu’on lui envoie en entrée. 
+                            
+                        </p>
+                    </div>
+                </div>
+                <hr class="uk-margin-medium">
+                <h2>Software, Utilisation et Calibration</h2>
+                <div class="uk-grid uk-flex uk-flex-middle">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p>
+                            Pour utiliser le servo avec Arduino, il faut inclure la librairie dans notre sketch, en écrivant au début du code #include < Servo.h >. Ensuite, il faudra créer un objet de type Servo pour chaque utilisé, puis lui indiquer la broche sur laquelle est connecté le fil de commande du servo en utilisant la fonction attach() de l’objet Servo créé. Cette fonction prend 3 arguments :<br><br>
+                                •	Le numéro de la broche sur laquelle est relié le fil de signal<br>
+                                •	La valeur basse (angle à 0°) de la durée de l’état haut du signal de PPM en microsecondes (optionnel, défaut à 544 µs)<br>
+                                •	La valeur haute (angle à 90°, 180°, 360°, etc.) de la durée de l’état haut du signal de PPM en microsecondes (optionnel, défaut à 2400 µs)<br><br>
+
+                                Quand le servo est prêt à être mis en route, il faut lui fournir une consigne d’angle à laquelle il doit s’exécuter. Pour cela, on utilise la fonction write() , qui va écrire l’angle que le servo doit donner à son axe. Cette fonction prend pour argument un nombre, de type int, qui donne la valeur en degré de l’angle à suivre. <br><br>
+                                
+                                En premier, la fonction writeMicroSeconds() permet de tester un servo dont on ne connaît pas les caractéristiques (servo 0 à 90° ou autre), en envoyant différentes valeurs une à une (par la voie série par exemple) ; si le servo tremble pour des angles proches de 0 °ou 180°, alors la valeur utilisée est probablement erronée.<br>
+                                Une deuxième fonction pouvant être utile est la fonction read() ; elle sert dans un système où le servomoteur est géré automatiquement par le programme de la carte Arduino et où l’utilisateur ne peut y accéder.       
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m uk-text-center">
+                        <br>
+                        <img src="../../../../assets/CDR/2021/Nos Robots/servo/arduino_servo.png" style="height: 300px;">
+                        <p>
+                            <i>Le servomoteur branché sur une Arduino</i>
+                        </p>
+                    </div>
+                </div>
+                <hr class="uk-margin-medium">
+                <h2>Conclusion</h2>
+                <p>
+                    La maîtrise des servomoteurs est aisée et essentielle pour la CDR. Les servomoteurs utilisés pourront être réutilisés, en pensant à la calibration et à adapter la gamme angulaire à l’usage (0°-360° ou 0°-180°). Le principal défaut des servomoteurs utilisés est leur manque de précision.  Une solution serait d’allier servomoteurs et encodeurs.
+                </p>
+
+            </div>
+        </div>
+</body></html>
