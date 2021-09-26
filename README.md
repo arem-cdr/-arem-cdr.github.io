@@ -4,13 +4,17 @@ Voici le site de AREM, l'association de Robotique et d'Électronique de l'École
 
 Allez le visiter grâce à ce lien: https://arem-cdr.github.io/
 
-Encore en cours de construction, il reste à placer:
+Encore en cours de construction, il reste à faire:
+
+-Corriger les fautes d'orthographe
+
+-Uniformiser les articles
 
 -Des photos au format moins lourd
 
--Les derniers articles sur les robots
+-Ajouter les derniers articles sur les robots
 
--Les formations
+-Ajouter les formations
 
 -Un tuto pour la passation
 
