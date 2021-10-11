@@ -67,7 +67,6 @@
             <!--Partie à modifier en fonction de la page web-->
                 <h1>Capteurs TOF</h1>
                 <hr class="uk-margin-medium">
-                <hr class="uk-margin-medium">
                 <div class="uk-grid">
                     <div class="uk-width-2-3@m uk-first-column">
                         <p class="uk-text-lead">
@@ -77,13 +76,14 @@
                     </div>
                 </div> 
                 <hr class="uk-margin-medium">
+                <h2>Description</h2> 
                 <p>
                 Tof pour Time of Flight, signifie que c’est le temps de trajet d’une onde réfléchit par un obstacle qui sert à en déduire la distance de l’obstacle. Il faut s’adresser avec le protocole de communication i2C au sonar pour obtenir les valeurs de distances. L’adresse i2C du sonar peut être changé grâce à une suite d’instruction i2C. Cela permet d’utiliser plusieurs sonars quand ce principe est couplé avec l’utilisation du pin Xshut qui permet d’éteindre un sonar donné.<br><br>
                 Il est abondamment présent au local et possède une librairie Arduino facile d’utilisation.
                 Il suffit d’imprimer des pièces 3D spécifiques pour fixer le composant. Il faut ensuite relier les pin VCC, GND, SCL, SDA au microcontrôleur utilisé, et si plusieurs VL53L0X sont utilisés (et selon le code) il faudra aussi relier XSHUT. Le Pin GPIO1 permet d’utiliser le mode one-shot du sonar, càd mesure sur demande du micro.<br><br>                        
                 </p>
                 <hr class="uk-margin-medium">
-                <h4>Code:</h4> 
+                <h2>Code</h2> 
                 <p>
                     Dans le code de la CDR2021 sont utilisés ces deux librairies:<br>
                     <code>
@@ -103,7 +103,7 @@
                     <code>
                         PinShut[x] = pinNametoDigitalPin(Px_xx);<br><br></code>
                 </p>
-                <h4>Conclusion:</h4> 
+                <h2>Conclusion:</h2> 
                 <p>Si l’intégration des TOFS durant la CDR2021 a été réussi son utilisation dans un cas pratique n’a pas été démontré. On peut cependant placer de l’espoir dans cette technologie dans les phases de calibration des coefficients du robots, pour l’instant réalisées à la main. De même pour la calibration de la position initiale du robot.<br>
                 </p>
             </div>
