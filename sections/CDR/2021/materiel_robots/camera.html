@@ -78,12 +78,9 @@
                     </div>
                 </div>
                 <hr class="uk-margin-medium">
-                <h4>Fonctionnement :</h4>
-                <p>La caméra choisie est spécialement conçue pour se brancher sur une carte Raspberry. Le traitement d’image s’effectue ensuite via un programme écrit en python en utilisant la bibliothèque Open cv.<br></p>
-                <h4>Choix du composant :</h4>
-                <p>Pour la CDR 2021, nous avons réutilisé les caméras de l’année dernière. La première, placée sur Kraken, est une caméra grand angle qui a le désavantage de déformer les images mais l’avantage de voir une très large partie du terrain. La seconde est une caméra qui peut voir en infra-rouge. Elle a l’avantage de voir la nuit, mais en environnement éclairé elle a le désavantage de ne pas représenter fidèlement les couleurs : elles tendent vers le rouge. Cependant on peut corriger ce problème dans le programme python.</p>
-                <h4>Intégration du composant :</h4>
-                <p>
+                <h2>Fonctionnement , choix et intégration</h2>
+                <p>La caméra choisie est spécialement conçue pour se brancher sur une carte Raspberry. Le traitement d’image s’effectue ensuite via un programme écrit en python en utilisant la bibliothèque Open cv.<br><br>
+                Pour la CDR 2021, nous avons réutilisé les caméras de l’année dernière. La première, placée sur Kraken, est une caméra grand angle qui a le désavantage de déformer les images mais l’avantage de voir une très large partie du terrain. La seconde est une caméra qui peut voir en infra-rouge. Elle a l’avantage de voir la nuit, mais en environnement éclairé elle a le désavantage de ne pas représenter fidèlement les couleurs : elles tendent vers le rouge. Cependant on peut corriger ce problème dans le programme python.<br>
                 Une Raspberry Pi fonctionnement sous Raspberry Pi OS (nouveau nom de l’OS Raspbian) a été utilisée. Afin de faire fonctionner la caméra, il faut activer le paramètre relatif à l’utilisation de la caméra dans les réglages. Ensuite, il faudra installer Python et Open cv. <br>
                 Pour cela, je conseille de suivre le tutoriel d’installation : <br><a href=https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/>https://www.pyimagesearch.com/2018/09/19/pip-install-opencv/</a>
                 <br><br>Il est conseillé de faire une installation avec pip. De plus, il n’est pas pertinent d’utiliser un environnement virtuel dans le Raspberry pour notre utilisation, donc inutile de faire le workon cv.<br>
@@ -109,8 +106,8 @@
                     </div>
                 </div>              
                 <hr class="uk-margin-medium">
-                <h3>Conclusion</h3>
-                <h4>Travail accompli :</h4>
+                <h2>Conclusion</h2>
+                <h4>Travail accompli</h4>
 
                 <p>La partie de détection de couleurs sur Kraken est très efficace mais malheureusement lors du passage à la coupe, Kraken n’a pu saisir aucun gobelet, donc la caméra n’a pas pu être utilisée.<br><br>
                     La partie de détection des gobelets avec Léviathan est efficace dans certains environnements mais n’est pas suffisamment fiable pour se passer de capteurs (TOF, ultrasons etc).</p>
