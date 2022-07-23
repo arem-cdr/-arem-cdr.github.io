@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html><head>
+<!--IMPORTANT! Modifier les chemins d'accès au CSS, JS et aux photos en fonction du dossier-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>AREM</title>
+        <link rel="icon" type="image/png" href="../../../../assets/commun/icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../../../css/uikit.css">
+        <script src="../../../../js/uikit.js"></script>
+        <script src="../../../../js/uikit-icons.js"></script>        
+    </head>
+    <body>
+        <section style="background: url('../../../../assets/commun/fond.png'); ">
+            <div class="uk-container">
+                <img src="../../../../assets/commun/icon.png" style="height:150px;float:left;">
+                <p style="font-family:Optimus; font-size: 1.5em; color:aliceblue; float:center;"><br>Association de Robotique et d'Électronique des Mines</p>
+            </div>
+        </section>
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div class="uk-navbar" uk-navbar="">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li >
+                                <a href="../../../../index.html">Accueil</a>
+                            </li>
+                            <li class="uk-active">
+                                <a href="#" aria-expanded="false">Coupe de Robotique</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 67.7333px; top: 80px;">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-Parent">
+                                            <a href="../../../../sections/CDR/2021/CDR-2021-menu.html">Session 2021</a>
+                                            <a href="../../../../index.html">Session 2020</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../../../../index.html">Fusée</a>
+                            </li>
+                            <li>
+                                <a href="../../../qui-sommes-nous.html">Qui sommes-nous ?</a>
+                            </li>
+                            <li>
+                                <a href="../../../contact.html">Contact</a>
+                            </li>                
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a class="uk-navbar-toggle uk-icon" href="https://github.com/arem-cdr">
+                            <img src="../../../../assets/commun/logo_GitHub.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://fr-fr.facebook.com/AREM.ismin/">
+                            <img src="../../../../assets/commun/logo_Facebook.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://www.instagram.com/arem_ismin/">
+                            <img src="../../../../assets/commun/logo_insta.png" width="40" height="40">
+                        </a>                        
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="uk-section uk-section-default">
+            <div class="uk-container">
+            <!--Partie à modifier en fonction de la page web-->
+                <h1>Le Phare</h1>
+                <hr class="uk-margin-medium">
+                <div uk-grid>
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p class="uk-text-lead">
+                            Le phare est un élément spécifique au thème 2020-2021 «Sail the world». Conçu par l’équipe, il devait être fixé via une tige filetée sur la zone rocheuse pendant la phase de préparation du match. La forme du phare était libre, donc nous avons choisi un design de sous-marin.
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m">
+                        <img src="../../../../assets/CDR/2021/Phare/phare.png" style="height: 200px;">
+                    </div>
+                </div>
+                <hr class="uk-margin-medium">
+                <p>
+                    Pour marquer des points, le phare devait respecter certaines contraintes dimensionnelles et être allumé pendant le match par un système impliquant un contact physique avec un robot pour marquer des points. Nous avons donc utilisé un bouton poussoir, sur lequel Kraken venait appuyer.
+                </p>
+                <div class="uk-grid uk-flex uk-flex-middle">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p>
+                            Une fois activé, le phare allumait trois diodes 5V qui balaient un angle de 180 ° grâce à un servomoteur asservi en position. Lors de la réalisation, l’angle initial d’environ 175° était insuffisant ; il a fallu mettre du jeu sur la partie imprimée pour atteindre les 180° voulus.<br>
+                            La partie mécanique du phare consistait à assembler un système de montée. Pour hisser les rails en X, le moteur enroule le fil qui entraîne les glissières, grâce à des poulies de treuil de servo. La poulie solidaire au moteur CC et la partie haute du périscope ont été imprimés en 3D, selon une modélisation Inventor.  Les rails en X (barres métalliques) ont été assemblées au moyen de vis à tête cylindrique, et de support d'adaptation de surface du rail en X (commandés sur servocity.com). Le bouton d’arrêt d’urgence (en rouge, à la droite) est un bouton poussoir qui sert à couper l’alimentation électrique, à actionner en cas de danger ; pour réarmer l’ensemble il faut tourner le bouton.<br>
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m uk-text-center">
+                        <br>
+                        <img src="../../../../assets/CDR/2021/Phare/phare_activation.png" style="height: 200px;">
+                        <p>
+                            <i>Activation du phare par le robot</i>
+                        </p>
+                    </div>
+                </div>
+                <hr class="uk-margin-medium">
+                <div class="uk-grid">
+                    <div class="uk-width-1-5@m uk-first-column uk-text-center">
+                        <img src="../../../../assets/CDR/2021/Phare/phare_deploye.png" style="height: 350px;">
+                        <p>
+                            <i>Phare déployé</i>
+                        </p>
+                    </div>
+                    <div class="uk-width-3-5@m">
+                        <p>
+                            Une fois déployé, le phare mesurait environ 72 cm.<br> 
+                            Pour la partie électronique, nous avons utilisé la carte nucleo L432KC, à laquelle est reliée le servo-moteur faisant tourner le périscope. Nous avons mis un buck pour réguler la tension. Un bouton capteur de fin de déploiement a aussi été ajouté durant la phase de test, afin de rendre le phare plus fiable. <br><br>
+                            Pour ce qui est du software, l’IDE Arduino a été utilisé suite à différents problèmes d'installation rencontrés lors de l'utilisation de l'IDE mbed. Le code est très simple et peut être résumé par l'algorigramme à droite.<br><br>
+                            Le jour J, les problèmes majeurs rencontrés ont été un bouton poussoir grillé et des soudures défaites entre la carte et le servo-moteur. <br><br><br>
+                            En définitive, la réalisation du phare demandait plus de temps sur la partie mécanique que sur le code.  Le conseil à retenir, si un élément du genre est requis aux prochaines éditions, est d’établir le « cable managment » dès le début pour éviter que les fils soient en désordre, et de prévoir tous les éléments en double pour aller à la coupe. 
+                        </p>
+                    </div>
+                    <div class="uk-width-expand@m uk-text-center ">
+                        <img src="../../../../assets/CDR/2021/Phare/algo_phare.png" style="height: 470px;">
+                        <p>
+                            <i>Algorigramme</i>
+                        </p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+</body></html>

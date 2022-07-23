@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html><head>
+<!--IMPORTANT! Modifier les chemins d'accès au CSS, JS et aux photos en fonction du dossier-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>AREM</title>
+        <link rel="icon" type="image/png" href="../../../../assets/commun/icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../../../css/uikit.css">
+        <script src="../../../../js/uikit.js"></script>
+        <script src="../../../../js/uikit-icons.js"></script>        
+    </head>
+    <body>
+        <section style="background: url('../../../../assets/commun/fond.png'); ">
+            <div class="uk-container">
+                <img src="../../../../assets/commun/icon.png" style="height:150px;float:left;">
+                <p style="font-family:Optimus; font-size: 1.5em; color:aliceblue; float:center;"><br>Association de Robotique et d'Électronique des Mines</p>
+            </div>
+        </section>
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div class="uk-navbar" uk-navbar="">
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li >
+                                <a href="../../../../index.html">Accueil</a>
+                            </li>
+                            <li class="uk-active">
+                                <a href="#" aria-expanded="false">Coupe de Robotique</a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 67.7333px; top: 80px;">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-Parent">
+                                            <a href="../../../../sections/CDR/2021/CDR-2021-menu.html">Session 2021</a>
+                                            <a href="../../../../index.html">Session 2020</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../../../../index.html">Fusée</a>
+                            </li>
+                            <li>
+                                <a href="../../../qui-sommes-nous.html">Qui sommes-nous ?</a>
+                            </li>
+                            <li>
+                                <a href="../../../contact.html">Contact</a>
+                            </li>                
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <a class="uk-navbar-toggle uk-icon" href="https://github.com/arem-cdr">
+                            <img src="../../../../assets/commun/logo_GitHub.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://fr-fr.facebook.com/AREM.ismin/">
+                            <img src="../../../../assets/commun/logo_Facebook.png" width="50" height="50">
+                        </a>
+                        <a class="uk-navbar-toggle uk-icon" href="https://www.instagram.com/arem_ismin/">
+                            <img src="../../../../assets/commun/logo_insta.png" width="40" height="40">
+                        </a>                        
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <div class="uk-section uk-section-default">
+            <div class="uk-container">
+            <!--Partie à modifier en fonction de la page web-->
+                <h1>Capteurs TOF</h1>
+                <hr class="uk-margin-medium">
+                <div class="uk-grid">
+                    <div class="uk-width-2-3@m uk-first-column">
+                        <p class="uk-text-lead">
+                        Ce capteur sert à mesurer des distances. Utilisé seul ou couplé avec d’autres capteurs Tofs il permet : la détection de cible, la calibration en position, la calibration angulaire (en match ou en phase de calibration des coefficients du robots)                     </div>
+                    <div class="uk-width-expand@m uk-text-center\@m">
+                        <img src="../../../../assets/CDR/2021/TOF.png" style="height: 200px;">
+                    </div>
+                </div> 
+                <hr class="uk-margin-medium">
+                <h2>Description</h2> 
+                <p>
+                Tof pour Time of Flight, signifie que c’est le temps de trajet d’une onde réfléchit par un obstacle qui sert à en déduire la distance de l’obstacle. Il faut s’adresser avec le protocole de communication i2C au sonar pour obtenir les valeurs de distances. L’adresse i2C du sonar peut être changé grâce à une suite d’instruction i2C. Cela permet d’utiliser plusieurs sonars quand ce principe est couplé avec l’utilisation du pin Xshut qui permet d’éteindre un sonar donné.<br><br>
+                Il est abondamment présent au local et possède une librairie Arduino facile d’utilisation.
+                Il suffit d’imprimer des pièces 3D spécifiques pour fixer le composant. Il faut ensuite relier les pin VCC, GND, SCL, SDA au microcontrôleur utilisé, et si plusieurs VL53L0X sont utilisés (et selon le code) il faudra aussi relier XSHUT. Le Pin GPIO1 permet d’utiliser le mode one-shot du sonar, càd mesure sur demande du micro.<br><br>                        
+                </p>
+                <hr class="uk-margin-medium">
+                <h2>Code</h2> 
+                <p>
+                    Dans le code de la CDR2021 sont utilisés ces deux librairies:<br>
+                    <code>
+                    #include <Adafruit_VL53L0X.h><br>
+                    #include <Wire.h><br><br></code>
+                    Une structure sonar a été créé permettant de l’utiliser à plus haut niveau :<br>
+                    <code>
+                        TofList(); <br>
+                        double GetTofNdist(int TofID); // TofID must be between 0 & TofNumber-1 TofId = 0 -> "Tof1"<br>
+                        int Init(); // Return 0 if success, -1 if Failure<br>
+                        void Update();<br><br></code>
+                    TofList : constructeur de la classe<br>
+                    Init : permet d’initialiser les Tofs (changement d’adresse i2C entre autres)<br>
+                    GetTofNdist : permet d’obtenir la dernière mesure update d’un des Tofs.<br>
+                    
+                    En cas de changement du nombre de TOF ou de branchement des PIN Xshut différent, il faudra changer la valeur de COUNT_SENSORS et ou rajouter l’instruction dans le constructeur permettant d’initialiser le pin XSHUT correspondant au branchement du TOF rajouté.<br>                    
+                    <code>
+                        PinShut[x] = pinNametoDigitalPin(Px_xx);<br><br></code>
+                </p>
+                <h2>Conclusion:</h2> 
+                <p>Si l’intégration des TOFS durant la CDR2021 a été réussi son utilisation dans un cas pratique n’a pas été démontré. On peut cependant placer de l’espoir dans cette technologie dans les phases de calibration des coefficients du robots, pour l’instant réalisées à la main. De même pour la calibration de la position initiale du robot.<br>
+                </p>
+            </div>
+        </div>
+</body></html>
